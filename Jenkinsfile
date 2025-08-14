@@ -10,7 +10,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/your-username/your-repo.git'
+                    url: 'https://github.com/jaabless/FakeStore_API.git'
             }
         }
 
@@ -26,22 +26,7 @@ pipeline {
             }
         }
 
-        stage('Allure Report') {
-            steps {
-                allure([
-                    includeProperties: false,
-                    jdk: '',
-                    properties: [],
-                    reportBuildPolicy: 'ALWAYS',
-                    results: [[path: 'target/allure-results']]
-                ])
-            }
-        }
     }
 
-    post {
-        always {
-            junit 'target/surefire-reports/*.xml'
-        }
-    }
+
 }
