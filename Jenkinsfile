@@ -52,7 +52,7 @@ pipeline {
             slackSend(
                 channel: 'jenkins_notify',
                 color: 'danger',
-                message: "❌ Job Failed"
+                message: "❌ Job Failed "
             )
         }
         unstable {
