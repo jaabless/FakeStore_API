@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent (label: jenkins-agent)
 
     tools {
         maven 'Maven3' // Make sure Jenkins has this tool installed/configured
