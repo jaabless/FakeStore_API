@@ -24,9 +24,9 @@ public class TestDataProvider implements ArgumentsProvider {
 
     public static Stream<Arguments> validproductData() {
         return Stream.of(
-                Arguments.of(new Product(0, "Test Product", 99.99, "Test Description", "electronics", "test.jpg"), 200),
-                Arguments.of(new Product(0, "Another Product", 49.99, "Another Description", "books", "another.jpg"), 200), // Positive: Valid product
-                Arguments.of(new Product(0, "Edge Case Product", 0.01, "Edge Case Description", "electronics", "edge.jpg"), 200) // Edge: Minimum price
+                Arguments.of(new Product(0, "Test Product", 99.99, "Test Description", "electronics", "test.jpg"), 201),
+                Arguments.of(new Product(0, "Another Product", 49.99, "Another Description", "books", "another.jpg"), 201), // Positive: Valid product
+                Arguments.of(new Product(0, "Edge Case Product", 0.01, "Edge Case Description", "electronics", "edge.jpg"), 201) // Edge: Minimum price
         );
     }
 
@@ -220,9 +220,9 @@ public class TestDataProvider implements ArgumentsProvider {
 
     public static Stream<Arguments> validCartData() {
         return Stream.of(
-                Arguments.of(new Cart(0, 1, "2023-10-01", Arrays.asList(new Cart.ProductItem(1, 2))), 200),
-                Arguments.of(new Cart(0, 2, "2023-10-02", Arrays.asList(new Cart.ProductItem(2, 1))), 200), // Valid cart with one item
-                Arguments.of(new Cart(0, 3, "2023-10-03", Arrays.asList(new Cart.ProductItem(3, 5))), 200) // Valid cart with multiple items
+                Arguments.of(new Cart(0, 1, "2023-10-01", Arrays.asList(new Cart.ProductItem(1, 2))), 201),
+                Arguments.of(new Cart(0, 2, "2023-10-02", Arrays.asList(new Cart.ProductItem(2, 1))), 201), // Valid cart with one item
+                Arguments.of(new Cart(0, 3, "2023-10-03", Arrays.asList(new Cart.ProductItem(3, 5))), 201) // Valid cart with multiple items
         );
     }
 
