@@ -23,7 +23,7 @@ public class DeleteCartsTests extends BaseTest {
     @ParameterizedTest
     @MethodSource("com.example.fakestoreapi.data.TestDataProvider#validIds")
     @Story("DELETE Carts")
-    @DisplayName("Test DELETE carts by ID with valid IDs")
+    @DisplayName("Verify that user can delete carts by valid ID")
     void testDeleteCartsByValidId(int cartId, int expectedStatus) {
         given()
                 .spec(requestSpec)
@@ -38,7 +38,7 @@ public class DeleteCartsTests extends BaseTest {
     @ParameterizedTest
     @MethodSource("com.example.fakestoreapi.data.TestDataProvider#invalidIds")
     @Story("DELETE Carts")
-    @DisplayName("Test DELETE carts by ID with various invalid IDs")
+    @DisplayName("Verify that user cannot delete carts by invalid ID")
     void testDeleteCartsByInvalidId(int cartId, int expectedStatus) {
         given()
                 .spec(requestSpec)
