@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": { "type": "integer" },
+      "email": { "type": "string", "format": "email" },
+      "username": { "type": "string" },
+      "password": { "type": "string" },
+      "name": {
+        "type": "object",
+        "properties": {
+          "firstname": { "type": "string" },
+          "lastname": { "type": "string" }
+        },
+        "required": ["firstname", "lastname"]
+      },
+      "address": {
+        "type": "object",
+        "properties": {
+          "street": { "type": "string" },
+          "city": { "type": "string" },
+          "zipcode": { "type": "string" },
+          "number": { "type": ["string", "integer"] },
+          "geolocation": {
+            "type": "object",
+            "properties": {
+              "lat": { "type": "string" },
+              "long": { "type": "string" }
+            },
+            "required": ["lat", "long"]
+          }
+        },
+        "required": ["street", "city", "zipcode", "number", "geolocation"]
+      },
+      "phone": { "type": "string" },
+      "__v": { "type": "integer" }
+    },
+    "required": ["id", "email", "username", "password", "name", "address", "phone", "__v"]
+  }
+}

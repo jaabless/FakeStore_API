@@ -1,0 +1,8 @@
+com\example\fakestoreapi\model\User$Geo.class
+com\example\fakestoreapi\model\User$Name.class
+com\example\fakestoreapi\model\Cart$ProductItem.class
+com\example\fakestoreapi\model\User$Address.class
+com\example\fakestoreapi\model\AuthUser.class
+com\example\fakestoreapi\model\Product.class
+com\example\fakestoreapi\model\Cart.class
+com\example\fakestoreapi\model\User.class
