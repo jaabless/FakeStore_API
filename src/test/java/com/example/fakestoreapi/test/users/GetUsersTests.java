@@ -22,7 +22,8 @@ public class GetUsersTests extends BaseTest {
 
     @Test
     @Story("GET Users")
-    @DisplayName("Test GET /users endpoint")
+    @DisplayName("Verify that all users can be retrieved successfully")
+    @Description("Test GET /users endpoint")
     void testGetAllUsers() {
         given()
                 .spec(requestSpec)
@@ -39,7 +40,7 @@ public class GetUsersTests extends BaseTest {
     @ParameterizedTest
     @MethodSource("com.example.fakestoreapi.data.TestDataProvider#validIds")
     @Story("GET Users")
-    @DisplayName("Test GET /users/{id} endpoint")
+    @DisplayName("Test GET /users/{id} endpoint with valid ID")
     void testGetUserByValidId(int userId, int expectedStatus) {
         given()
                 .spec(requestSpec)
