@@ -6,6 +6,7 @@ import com.example.fakestoreapi.config.Endpoints;
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
 import io.qameta.allure.junit5.AllureJunit5;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -19,7 +20,7 @@ public class DeleteUsersTests extends BaseTest {
     @ParameterizedTest
     @MethodSource("com.example.fakestoreapi.data.TestDataProvider#validIds")
     @Story("DELETE Users")
-    @Description("Test DELETE /users/{id} endpoint with valid IDs")
+    @DisplayName("Verify that user can be deleted successfully by ID")
     void testDeleteUser(int userId, int expectedStatus) {
         given()
                 .spec(requestSpec)
