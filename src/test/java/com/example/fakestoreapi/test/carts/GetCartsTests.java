@@ -21,8 +21,9 @@ import static org.hamcrest.Matchers.*;
 public class GetCartsTests extends BaseTest {
     @Test
     @Story("GET Carts")
-    @DisplayName("Test GET /carts endpoint")
-    void getAllCarts() {
+    @DisplayName("Verify that the GET /carts endpoint returns a list of carts")
+    @Description("Test GET /carts endpoint")
+    void testGetAllCarts() {
         given()
                 .spec(requestSpec)
                 .when()

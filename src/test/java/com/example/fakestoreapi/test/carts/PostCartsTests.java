@@ -22,7 +22,7 @@ public class PostCartsTests extends BaseTest {
     @ParameterizedTest
     @MethodSource("com.example.fakestoreapi.data.TestDataProvider#validCartData")
     @Story("POST Cart")
-    @DisplayName("Test POST carts with valid data")
+    @DisplayName("Verify User can add to cart with valid data")
     void testPostCartWithValidData(Cart cart, int expectedStatus) {
         given()
                 .spec(requestSpec)
@@ -40,7 +40,7 @@ public class PostCartsTests extends BaseTest {
     @ParameterizedTest
     @MethodSource("com.example.fakestoreapi.data.TestDataProvider#invalidCartData")
     @Story("POST Cart")
-    @DisplayName("Test POST carts with invalid data")
+    @DisplayName("Verify User cannot add to cart with invalid data")
     void testPostCartWithInvalidData(Cart cart, int expectedStatus) {
         given()
                 .spec(requestSpec)
