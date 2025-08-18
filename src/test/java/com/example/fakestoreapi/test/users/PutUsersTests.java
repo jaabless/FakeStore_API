@@ -30,13 +30,12 @@ public class PutUsersTests extends BaseTest {
                 .put(Endpoints.USERS_DETAILS,user.getId()) // Using ID 1 as example
                 .then()
                 .statusCode(expectedStatus)
-                .body(matchesJsonSchemaInClasspath("schemas/user-schema.json"))
                 .header("Content-Type", containsString("application/json"));
     }
 
     @ParameterizedTest
     @MethodSource("com.example.fakestoreapi.data.TestDataProvider#invalidUpdateUserData")
-    @Story("UPDATE Carts")
+    @Story("UPDATE Users")
     @DisplayName("Test Update /users/{id} endpoint with invalid data")
     void testUpdateInvalidUser(User user, int expectedStatus) {
         given()

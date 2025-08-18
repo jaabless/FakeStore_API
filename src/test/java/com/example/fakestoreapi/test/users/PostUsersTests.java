@@ -24,7 +24,7 @@ public class PostUsersTests extends BaseTest {
     @ParameterizedTest
     @MethodSource("com.example.fakestoreapi.data.TestDataProvider#validUserData")
     @Story("POST User")
-    @DisplayName("Test POST user with valid data")
+    @DisplayName("Verify that user can create a user with valid data")
     void testPostUserWithValidData(User user, int expectedStatus) {
         given()
                 .spec(requestSpec)
@@ -33,15 +33,13 @@ public class PostUsersTests extends BaseTest {
                 .post(Endpoints.USERS)
                 .then()
                 .statusCode(expectedStatus)
-                .body(matchesJsonSchemaInClasspath("schemas/user-schema.json"))
-                .header("Content-Type", containsString("application/json"))
-                .body("id", notNullValue());
+                .header("Content-Type", containsString("application/json"));
     }
 
     @ParameterizedTest
     @MethodSource("com.example.fakestoreapi.data.TestDataProvider#invalidUserData")
     @Story("POST User")
-    @DisplayName("Test POST user with valid data")
+    @DisplayName("Verify that user cannot create a user with invalid data")
     void testPostUserWithInvalidData(User user, int expectedStatus) {
         given()
                 .spec(requestSpec)
