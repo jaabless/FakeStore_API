@@ -3,6 +3,7 @@ package com.example.fakestoreapi.test.performance;
 import com.example.fakestoreapi.base.BaseTest;
 import com.example.fakestoreapi.config.Endpoints;
 import io.qameta.allure.Description;
+import io.qameta.allure.Story;
 import io.qameta.allure.junit5.AllureJunit5;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -25,6 +26,7 @@ public class PerformanceTests extends BaseTest {
 
     @Test
     @Description("Test concurrent requests")
+    @Story("Perfomance Testing")
     void testConcurrentRequests() throws Exception {
         ExecutorService executor = Executors.newFixedThreadPool(10);
         CloseableHttpClient httpClient = HttpClients.createDefault();
@@ -46,6 +48,7 @@ public class PerformanceTests extends BaseTest {
 
     @Test
     @Description("Test rate limiting")
+    @Story("Perfomance Testing")
     void testRateLimiting() {
         for (int i = 0; i < 100; i++) {
             given()
@@ -61,6 +64,7 @@ public class PerformanceTests extends BaseTest {
     @ParameterizedTest
     @MethodSource("com.example.fakestoreapi.data.TestDataProvider#validIds")
     @Description("Test response time for GET /users/{id}")
+    @Story("Perfomance Testing")
     void testGetUserResponseTime(int userId, int expectedStatus) {
         given()
                 .spec(requestSpec)
